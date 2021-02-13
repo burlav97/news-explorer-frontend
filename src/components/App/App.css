@@ -1,0 +1,56 @@
+@font-face { 
+    font-family: 'Roboto Slab';
+    src: url(../../fonts/robotoslab-regular.woff) format('woff');
+}
+@font-face { 
+    font-family: 'Roboto';
+    src: url(../../fonts/roboto-regular.woff) format('woff');
+}
+@font-face { 
+    font-family: 'Source sans pro';
+    src: url(../../fonts/sourcesanspro-regular.woff) format('woff');
+}
+@font-face { 
+    font-family: 'Inter';
+    src: url(../../fonts/inter-regular.woff) format('woff');
+}
+@import url(../Header/Header.css);
+@import url(../SavedNewsHeader/SavedNewsHeader.css);
+@import url(../SearchForm/SearchForm.css);
+@import url(../About/About.css);
+@import url(../Footer/Footer.css);
+
+.root {
+    position: relative;
+    
+}
+
+.page {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-size: 100%;
+    background-image: url('../../images/bavk.jpg');
+    background-repeat: no-repeat;
+    padding: 0;
+}
+*, a:focus {
+    outline: none !important;
+}
+@media screen and (max-width: 768px) {
+    .page {
+      background: url('../../images/background-768.png') no-repeat;
+      background-size: 768px 400px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .page {
+        max-width: 320px;
+      background: url('../../images/background-320.png') no-repeat;
+      background-size: 320px 536px;
+    }
+    .overlay {
+    width: 100vw;
+
+    }
+  }
