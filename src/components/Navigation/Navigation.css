@@ -54,4 +54,12 @@ color: #B6BCBF;
     .navigation__link {
         padding-bottom: 23px;
     }
+    .navigation__link_active-saved-news {
+        border-bottom: 2px solid black;
+        padding-bottom: 6px;
+        transition: border-bottom .7 ease; 
+    }
+    .navigation__link_saved-news {
+        margin-bottom: 12px;  
+    }
   }

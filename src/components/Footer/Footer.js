@@ -13,8 +13,8 @@ function Footer() {
                 <a href='https://praktikum.yandex.ru' target='_blank' className='footer__link'>Яндекс.Практикум</a>
                 </nav>
                 <div className='footer__social'>
-                <a href='https://github.com/burlav97' target='_blank' className='footer__icon'><img className='footer_icon' src={ github } alt='github'></img></a>
-                <a href='https://www.facebook.com/' target='_blank' className='footer__icon'><img className='footer_icon' src={ facebook } alt='facebook'></img></a>
+                <a href='https://github.com/burlav97' target='_blank' className='footer__icon'><img className='footer_icon' src={ github } alt='github'/></a>
+                <a href='https://www.facebook.com/' target='_blank' className='footer__icon'><img className='footer_icon' src={ facebook } alt='facebook'/></a>
                 </div>
             </div>
         </footer>

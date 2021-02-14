@@ -38,7 +38,7 @@ function Login({ onLogin, isOpen, onClose, changeModal }) {
         labelValue={'Email'}
         placeholder={'Введите email'}
         type={'email'}
-        name={'email'}
+        name={'email-log'}
         className={'popup__input'}
         value={values.email || ''}
         onChange={handleChange}
@@ -48,7 +48,7 @@ function Login({ onLogin, isOpen, onClose, changeModal }) {
         labelValue={'Пароль'}
         placeholder={'Введите пароль'}
         type={'password'}
-        name={'password'}
+        name={'password-log'}
         className={'popup__input'}
         value={values.password || ''}
         onChange={handleChange}

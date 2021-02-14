@@ -4,7 +4,7 @@ import about from '../../images/about.jpg';
 function About() {
     return (
         <section className='about'>
-            <img className='about__photo' src={about} alt='authorphoto'></img>
+            <img className='about__photo' src={about} alt='authorphoto'/>
             <div className='about__descpiption'>
                 <h4 className='subtitle'>Об авторе</h4>                
                 <p className='about__paragraph'>Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>

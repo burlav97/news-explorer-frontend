@@ -38,8 +38,8 @@
 }
 @media screen and (max-width: 768px) {
     .page {
-      background: url('../../images/background-768.png') no-repeat;
-      background-size: 768px 400px;
+     background-image: url('../../images/background-768.png') no-repeat;;
+
     }
   }
   
@@ -47,7 +47,7 @@
     .page {
         max-width: 320px;
       background: url('../../images/background-320.png') no-repeat;
-      background-size: 320px 536px;
+      
     }
     .overlay {
     width: 100vw;

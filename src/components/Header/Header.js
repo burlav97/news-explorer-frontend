@@ -15,14 +15,9 @@ function Header({ onSignOut, onLogin, authForm, isClose,headerClassName }) {
       <div className={!isBurgerMenu ?'header__overlay' : 'header__overlay header__overlay_type_visible'}></div>
       <div className={!isBurgerMenu ?'header__line' : 'header__line header__line_type_visible'}></div>
               <h2 className='header__title'>NewsExplorer</h2>
-              <Switch>
-            <Route exact path='/'>
-              <button className={!isBurgerMenu ? 'header__button_burger-menu' : 'header__button_menu-close'} onClick={handleBurgerMenu}></button>
-            </Route>
-            <Route path='/saved-news'>
-              <button className={!isBurgerMenu ? 'header__menu-saved' : 'header__menu header__menu-close'} onClick={handleBurgerMenu}></button>
-            </Route>
-          </Switch>
+          
+              <button className={!isBurgerMenu ? 'header__burger header__burger_menu' : 'header__burger header__burger_close'} onClick={handleBurgerMenu}></button>
+            
           <div className={!isBurgerMenu ? 'header__container' : 'header__container header__container_type_visible'}>
           
           <Navigation />

@@ -39,7 +39,7 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
         labelValue={'Email'}
         placeholder={'Введите почту'}
         type={'email'}
-        name={'email'}
+        name={'email-reg'}
         className={'popup__input'}
         value={values.email || ''}
         onChange={handleChange}
@@ -49,7 +49,7 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
         labelValue={'Пароль'}
         placeholder={'Введите пароль'}
         type={'password'}
-        name={'password'}
+        name={'password-reg'}
         className={'popup__input'}
         value={values.password || ''}
         onChange={handleChange}
@@ -60,7 +60,7 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
         labelValue={'Имя'}
         placeholder={'Введите своё имя'}
         type={'name'}
-        name={'name'}
+        name={'name-reg'}
         className={'popup__input'}
         value={values.name || ''}
         onChange={handleChange}
