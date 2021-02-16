@@ -1,0 +1,99 @@
+.cards {
+    background-color: #F5F6F7;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+    
+.cards__title {
+    margin: 80px auto 10px;
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.9rem;
+    letter-spacing: 0px;
+    text-align: left;
+    width: 1232px;
+}
+.cards__button {
+    align-self: center;  
+font-family: 'Roboto', Arial, 'Inter', sans-serif;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5rem;
+letter-spacing: 0px;
+text-align: center;
+padding: 14px 84px;  
+color: black;
+background: rgba(255, 255, 255, 1);
+margin: 0 0 80px;
+border-radius: 50px;
+border: none;
+transition: .7 ease;
+}
+.cards__button:hover {
+    background: rgba(255, 255, 255, .7);
+}
+.cards__list {
+    margin: 54px auto 62px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 1232px;
+    flex-wrap: wrap;
+
+}
+@media (max-width: 1280px) {
+    .cards__list {
+       width: 1024px;
+       margin: 42px auto 22px;
+    }
+    .cards__title {
+        width: 1024px;
+        margin: 40px auto 0;
+        font-size: 1.9rem;
+    line-height: 2.1rem;
+    }
+    .cards__button {
+        padding: 15px 60px;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin: 6px 0 40px;
+    }
+}
+@media (max-width: 1024px) {
+    .cards__list {
+       max-width: 688px;
+       margin: 32px auto 22px;
+    }
+    .cards__title {
+        width: 688px;
+        margin: 40px auto 0;
+        font-size: 1.9rem;
+    line-height: 2.1rem;
+    }
+    .cards__button {
+        padding: 15px 60px;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin: 14px 0 40px;
+    }
+}
+@media (max-width: 767px) {
+    .cards__list {
+        flex-direction: row;
+        max-width: 288px;
+        margin: 24px auto 15px;
+    }
+    .cards__title {
+        width: 288px;
+        margin: 32px auto 0;
+        font-size: 1.9rem;
+    line-height: 2.1rem;
+    }
+}
