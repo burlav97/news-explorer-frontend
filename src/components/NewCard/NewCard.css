@@ -114,8 +114,10 @@
 .card__button_type_save:hover {
     background-image: url('../../images/bookmark-hover.svg');
 }
-.card__button_type_save:active {
+.card__button_type_save-active {
     background-image: url('../../images/bookmark-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .card__button_type_delete {
     background-image: url('../../images/trash.svg');
@@ -125,9 +127,7 @@
 .card__button_type_delete:hover {
     background-image: url('../../images/trash-hover.svg');
 }
-.card__button_state_active {
-    opacity: 1;
-}
+
 .card__tooltip {
     display: none;
 }

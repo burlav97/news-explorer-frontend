@@ -3,7 +3,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Input from '../Input/Input';
 import useFormValidation from '../../utils/Validator';
 
-function Login({ onLogin, isOpen, onClose, changeModal }) {
+function Login({ onLogin, isOpen, onClose, changeModal, message }) {
   const {
     values,
     handleChange,
@@ -33,12 +33,13 @@ function Login({ onLogin, isOpen, onClose, changeModal }) {
       changeModal={changeModal}
       text={'или '}
       isValid={isValid}
+      errorValidation={message}
     >
       <Input
         labelValue={'Email'}
         placeholder={'Введите email'}
         type={'email'}
-        name={'email-log'}
+        name={'email'}
         className={'popup__input'}
         value={values.email || ''}
         onChange={handleChange}
@@ -48,7 +49,7 @@ function Login({ onLogin, isOpen, onClose, changeModal }) {
         labelValue={'Пароль'}
         placeholder={'Введите пароль'}
         type={'password'}
-        name={'password-log'}
+        name={'password'}
         className={'popup__input'}
         value={values.password || ''}
         onChange={handleChange}
