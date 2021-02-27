@@ -5,7 +5,7 @@ import logout from '../../images/logout.svg';
 import CurrentUserContext from '../../utils/CurrentUserContext.js';
 
 
-function SavedNewsHeader({ onSignOut, isClose }) {
+function SavedNewsHeader({ onSignOut }) {
     const [isBurgerMenu, setIsBurgerMenu] = React.useState(false);
 
     const handleBurgerMenu = () => {

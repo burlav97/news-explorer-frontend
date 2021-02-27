@@ -54,7 +54,13 @@ export const getArticles = (token) => {
         'Authorization': `Bearer ${token}`,
       }
     })
-    .then((res) => this.resFetch(res));
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Ошибка: ${res.status} - ${res.statusText}`);
+    });
+
   };
   
   export const saveArticle = (article) => {
@@ -66,9 +72,13 @@ export const getArticles = (token) => {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
       },
       body: JSON.stringify(article)
-    }).then((res) => this.resFetch(res));
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Ошибка: ${res.status} - ${res.statusText}`);
+    });
   };
-  
   export const deleteArticle = (_id) => {
     return fetch(`${BASE_URL}/articles/${_id}`, {
       method: 'DELETE',
@@ -77,5 +87,10 @@ export const getArticles = (token) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
       },
-    }).then((res) => this.resFetch(res));
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Ошибка: ${res.status} - ${res.statusText}`);
+    });
   };

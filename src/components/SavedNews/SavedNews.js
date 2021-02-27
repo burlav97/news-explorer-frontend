@@ -33,11 +33,11 @@ function SavedNews({ saveArticles, onDeleteArticle }) {
             setKeywordsAdditional('');
 
         }
-    }, [keywords, saveArticles]);
+    }, [keywords]);
 
     return (
         <section className='saved-news'>
-            <div className='saved-news__description'  saveArticles={saveArticles}>
+            <div className='saved-news__description'>
                 <h3 className='saved-news__title'>Сохраненные статьи</h3>
                 <p className='saved-news__quantity'>{userName}, у вас  {saveArticles.length} {declination}</p>
                 <p className='saved-news__tag'>По ключевым словам:<span className='saved-news__span'> {keywordsList}, {keywordsAdditional}</span></p>

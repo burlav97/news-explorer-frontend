@@ -57,7 +57,7 @@ function NewCard({ article, onSaveArticle, setIsRegisterOpen, onDeleteArticle })
                 <p className='card__date'>{getArticleDate(article.publishedAt || article.date || '')}</p>
                 <h3 className='card__title'>{article.title || ''}</h3>
                 <p className='card__text'>{article.description || article.text || ''}</p>
-                <a className='card__source' href={article.url || article.link || ''}  targer>{article.source.name || article.source || ''}</a>
+                <a className='card__source' href={article.url || article.link || ''}  target='blank'>{article.source.name || article.source || ''}</a>
             </div>
 
             <Switch>
