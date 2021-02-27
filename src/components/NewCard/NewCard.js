@@ -39,14 +39,16 @@ function NewCard({ article, onSaveArticle, setIsRegisterOpen, onDeleteArticle })
     const mouseLeave = () => {
         setTooltipClassName('card__tooltip');
     }
-    const handleOnClickSave = (e) => {
-        if (localStorage.getItem('jwt')) {
-            e.target.classList.remove('card__button_type_save');
-            e.target.classList.add('card__button_type_save-active');
+  
+    function handleOnClickSaveArticle(e) {
+        if(localStorage.getItem('jwt')) {
+          e.target.classList.remove('card__button_type_save');
+          e.target.classList.add('card__button_type_save-active');  
+          onSaveArticle(toSaveArticle);
         } else {
-            setIsRegisterOpen(true);
+          setIsRegisterOpen(true);
         }
-    }
+      };
     const handleOnDelete = (e) => {
         onDeleteArticle(toSaveArticle);
     }
@@ -63,7 +65,7 @@ function NewCard({ article, onSaveArticle, setIsRegisterOpen, onDeleteArticle })
             <Switch>
                 <Route exact path='/'>
                     <p className={tooltipClassName}>Войдите, чтобы сохранять статьи</p>
-                    <button className={article.isSaved === false ? 'card__button card__button_type_save' : 'card__button card__button_type_save-active'}  type='submit' onClick={handleOnClickSave} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} disabled={article.isSaved === true} ></button>
+                    <button className={article.isSaved === false ? 'card__button card__button_type_save' : 'card__button card__button_type_save-active'}  type='submit' onClick={handleOnClickSaveArticle} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} disabled={article.isSaved === true} ></button>
 
                 </Route>
                 <Route path='/saved-news'>
