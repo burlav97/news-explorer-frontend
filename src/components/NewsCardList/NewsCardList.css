@@ -7,7 +7,11 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
-    
+
+.cards_type_length {
+    background: #fff;
+  }
+  
 .cards__title {
     margin: 80px auto 10px;
     font-family: 'Roboto Slab', Arial, sans-serif;

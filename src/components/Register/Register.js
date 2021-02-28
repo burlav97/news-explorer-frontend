@@ -3,7 +3,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Input from '../Input/Input';
 import useFormValidation from '../../utils/Validator';
 
-function Register({ onRegister, isOpen, onClose, changeModal }) {
+function Register({ onRegister, isOpen, onClose, changeModal, message }) {
   const {
     values,
     handleChange,
@@ -33,13 +33,13 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
       changeModal={changeModal}
       text={'или '}
       isValid={isValid}
-      errorValidation={'Такой пользователь уже есть'}
+      errorValidation={message}
     >
       <Input
         labelValue={'Email'}
         placeholder={'Введите почту'}
         type={'email'}
-        name={'email-reg'}
+        name={'email'}
         className={'popup__input'}
         value={values.email || ''}
         onChange={handleChange}
@@ -49,7 +49,7 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
         labelValue={'Пароль'}
         placeholder={'Введите пароль'}
         type={'password'}
-        name={'password-reg'}
+        name={'password'}
         className={'popup__input'}
         value={values.password || ''}
         onChange={handleChange}
@@ -60,7 +60,7 @@ function Register({ onRegister, isOpen, onClose, changeModal }) {
         labelValue={'Имя'}
         placeholder={'Введите своё имя'}
         type={'name'}
-        name={'name-reg'}
+        name={'name'}
         className={'popup__input'}
         value={values.name || ''}
         onChange={handleChange}

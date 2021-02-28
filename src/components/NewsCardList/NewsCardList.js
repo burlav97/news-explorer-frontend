@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route, } from 'react-router-dom';
 import NewCard from '../NewCard/NewCard'
-import arrayCards from '../../utils/cards';
 import './NewsCardList.css';
+import { NUMBER_OF_CARDS } from '../../utils/constants';
 
-function NewCardList() {
+function NewsCardList({ articles, saveArticles, onSaveArticle, setIsRegisterOpen, onDeleteArticle, cardsClassName }) {
     const [viewMore, setViewMore] = React.useState(false)
     const handleViewMore = () => {
         setViewMore(true);
-      };
+    };
 
     return (
         <section className='cards'>
@@ -17,47 +17,37 @@ function NewCardList() {
                     <h2 className='cards__title'>Результаты поиска</h2>
                     <ul className='cards__list'>
                         {!viewMore
-                            ? arrayCards.slice(0, 3).map((card) => (
+                            ? articles && articles.slice(0, NUMBER_OF_CARDS).map((article, index) => (
                                 <NewCard
-                                    key={card._id}
-                                    img={card.img}
-                                    title={card.title}
-                                    text={card.text}
-                                    link={card.link}
-                                    source={card.source}
-                                    date={card.date}
-                                    keyword={card.keyword}
+                                    key={index}
+                                    article={article}
+                                    onSaveArticle={onSaveArticle}
+                                    setIsRegisterOpen={setIsRegisterOpen}
                                 />
                             ))
-                            : arrayCards.map((card) => (
+                            : articles && articles.map((article, index) => (
                                 <NewCard
-                                    key={card._id}
-                                    img={card.img}
-                                    title={card.title}
-                                    text={card.text}
-                                    link={card.link}
-                                    source={card.source}
-                                    date={card.date}
-                                    keyword={card.keyword}
+                                    key={index}
+                                    article={article}
+                                    type='main'
+                                    onSaveArticle={onSaveArticle}
+                                    setIsRegisterOpen={setIsRegisterOpen}
                                 />
                             ))}
                     </ul>
-                    <button onClick={handleViewMore} className='cards__button'>Показать еще</button>
+                    {!viewMore ? <button onClick={handleViewMore} className='cards__button'>Показать еще</button>
+                        : null
+                    }
                 </Route>
                 <Route path='/saved-news'>
                     <ul className='cards__list'>
-                              {  arrayCards.map((card) => (
-                              <NewCard
-                                    img={card.img}
-                                    title={card.title}
-                                    text={card.text}
-                                    link={card.link}
-                                    source={card.source}
-                                    date={card.date}
-                                    keyword={card.keyword}
-                                    key={card._id}
-                                />
-                              ))}
+                        {saveArticles && saveArticles.map((article) => (
+                            <NewCard
+                            key={article._id}
+                            article={article}
+                            onDeleteArticle={onDeleteArticle}
+                            />
+                        ))}
                     </ul>
                 </Route>
             </Switch>
@@ -65,4 +55,4 @@ function NewCardList() {
     );
 }
 
-export default NewCardList;
+export default NewsCardList;

@@ -3,12 +3,12 @@ import { NavLink, Route, Switch, Link} from 'react-router-dom';
 import './Navigation.css';
 
 
-function Navigation({ onLogin }) {
+function Navigation({ loggedIn }) {
     return (
         <nav className='navigation'>
             <Switch>
                 < Route exact path='/'>
-                    {onLogin
+                    {loggedIn
                         ? (
                             <>
                                 <NavLink to='/' activeClassName='navigation__link_active' className='navigation__link'>Главная</NavLink>

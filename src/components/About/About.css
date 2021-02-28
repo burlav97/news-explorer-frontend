@@ -44,10 +44,14 @@
 @media (max-width: 1312px) {
     .about {
         max-width: calc(100% - 80px);
+        margin-top: 70px;
     }
 }
 
 @media (max-width: 1023px) {
+    .about {
+        margin-top: 70px;
+    }
     .about__photo {
         max-width: 232px;
         margin: 61px 32px 61px 0;
@@ -75,6 +79,7 @@
         max-width: calc(100% - 48px);
         flex-direction: column;
         align-items: center;
+        margin-top: 70px;
     }
 
     .about__photo {

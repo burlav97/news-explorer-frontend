@@ -1,10 +1,12 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
+import logout from '../../images/logout.svg';
+import CurrentUserContext from '../../utils/CurrentUserContext.js';
 
-function Header({ onSignOut, onLogin, authForm, isClose,headerClassName }) {
+function Header({ onSignOut, loggedIn, authForm, openLoginPopup }) {
   const [isBurgerMenu, setIsBurgerMenu] = React.useState(false);
-
+  const currentUser = React.useContext(CurrentUserContext);
   const handleBurgerMenu = () => {
     setIsBurgerMenu(!isBurgerMenu);
   };
@@ -20,15 +22,19 @@ function Header({ onSignOut, onLogin, authForm, isClose,headerClassName }) {
             
           <div className={!isBurgerMenu ? 'header__container' : 'header__container header__container_type_visible'}>
           
-          <Navigation />
-          {onLogin
+          <Navigation 
+          authForm={openLoginPopup}
+          loggedIn={loggedIn}
+          onSignOut={onSignOut}
+          />
+          {loggedIn
             ? (
               <Switch>
                 < Route exact path='/'>
-                  <Link to='/' className='header__button' onClick={onSignOut}>Грета</Link>
+                  <Link to='/' className='header__button' onClick={onSignOut}>{currentUser.name}</Link>
                 </Route>
                 < Route exact path='/saved-news'>
-                  <Link to='/' className='header__button header__button_saved-header' onClick={onSignOut}>Грета</Link>
+                  <Link to='/' className='header__button header__button_saved-header' onClick={onSignOut}>{currentUser.name}<img src={logout} className='header__icon' alt='logout icon' /></Link>
                 </Route>
               </Switch>
             )

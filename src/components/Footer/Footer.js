@@ -9,7 +9,7 @@ function Footer() {
             <p className='footer__copyright'>&#174; 2020 Supersite, Powered by News API</p>
             <div className='footer__container'>
                 <nav className='footer__nav'>
-                <Link exact to='/' className='footer__link'>Главная</Link>
+                <Link to='/' className='footer__link'>Главная</Link>
                 <a href='https://praktikum.yandex.ru' target='_blank' className='footer__link'>Яндекс.Практикум</a>
                 </nav>
                 <div className='footer__social'>

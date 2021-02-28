@@ -1,7 +1,7 @@
 import React from 'react';
-import './ResultNotFound.css';
+import './NotFoundResult.css';
 
-function ResultNotFound() {
+function NotFoundResult() {
   return (
     <section className='result-not-found'>
       <div className='result-not-found__image'></div>
@@ -13,4 +13,4 @@ function ResultNotFound() {
   );
 }
 
-export default ResultNotFound;
+export default NotFoundResult;
