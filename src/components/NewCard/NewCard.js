@@ -49,7 +49,7 @@ function NewCard({ article, onSaveArticle, setIsRegisterOpen, onDeleteArticle })
           setIsRegisterOpen(true);
         }
       };
-    const handleOnDelete = (e) => {
+    const handleOnDelete = () => {
         onDeleteArticle(toSaveArticle);
     }
     return (

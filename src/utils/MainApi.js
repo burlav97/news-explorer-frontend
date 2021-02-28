@@ -79,8 +79,8 @@ export const getArticles = (token) => {
       return Promise.reject(`Ошибка: ${res.status} - ${res.statusText}`);
     });
   };
-  export const deleteArticle = (_id) => {
-    return fetch(`${BASE_URL}/articles/${_id}`, {
+  export const deleteArticle = (articleId) => {
+    return fetch(`${BASE_URL}/articles/${articleId}`, {
       method: 'DELETE',
       headers: { 
         'Accept': 'application/json',

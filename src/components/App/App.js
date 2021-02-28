@@ -212,6 +212,7 @@ function App() {
               <Footer />
             </Route>
             <ProtectedRoute path='/saved-news' loggedIn={loggedIn}>
+              <div className='page_type_save'>
               <SavedNewsHeader
                 headerClassName={'header'}
                 loggedIn={loggedIn}
@@ -221,6 +222,7 @@ function App() {
               <SavedNews saveArticles={saveArticles}
               onDeleteArticle={handleDeleteArticle} />
               <Footer />
+              </div>
             </ProtectedRoute>
             <Route path=''>
               <Redirect to={{ pathname: '/', state: { noAuthRedirected: true } }} />
